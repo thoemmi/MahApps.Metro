@@ -182,6 +182,18 @@
                           Text="{Binding Path=Title, Mode=TwoWay}" />
             </StackPanel>
         </TabItem>
+        <TabItem Header="TreeListView">
+            <Controls:TreeListView ItemsSource="{Binding Artists}" ChildrenPropertyName="Albums">
+                <Controls:TreeListView.View>
+                    <GridView AllowsColumnReorder="True">
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" />
+                        <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price}" />
+                    </GridView>
+                </Controls:TreeListView.View>
+            </Controls:TreeListView>
+        </TabItem>
     </TabControl>
 
 </UserControl>
+
